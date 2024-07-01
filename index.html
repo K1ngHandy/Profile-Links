@@ -18,12 +18,14 @@
         </ul>
     </nav>
     
-    <h1>Home</h1>
+    <section class="home">
+        <h1>Home</h1>
+    </section>
 
     <script type="module">
         import { NavBar } from './NavBar.js';
         document.addEventListener('DOMContentLoaded', () => {
-            new NavBar('menu-icon', '.nav-links');
+            new NavBar('.menu-icon', '.nav-links');
         });
     </script>
 </body>

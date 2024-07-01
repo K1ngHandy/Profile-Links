@@ -3,46 +3,69 @@ body {
     background-color: lightgray;
 }
 nav {
-    background-color: #330033;
-    color: white;
-    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    background-color: #330033;
+    color: white;
 }
 
-.logo img {
-    height: 40px;
+nav .logo img {
+    height: 50px;
 }
 
-.logo img:hover {
+nav .logo img:hover {
     transform: scale(1.2);
 }
 
-.nav-links {
+nav .menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+nav .nav-links {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin-left: 2em;
-}
-
-.nav-links a {
+nav .nav-links li a {
     color: white;
     text-decoration: none;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
 }
 
-.menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
+nav .nav-links a:hover {
+    color: rgb(15, 160, 150);
+}
+
+.home {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-link img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {

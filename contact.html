@@ -11,19 +11,43 @@
         <div class="logo">
             <img src="/KingHandy.jpeg" alt="AI K1ngHandy Logo">
         </div>
-        <div class="menu-icon" onclick="toggleMenu">&#9776</div>
+        <div class="menu-icon">&#9776</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>   
     </nav>
     
-    <h1>Contact</h1>
-    
+    <section class="contact">
+        <h1>Contact</h1>
+        <div class="social-links">
+            <div class="social-link">
+                <a href="https://www.facebook.com/k1nghandy" target="_blank">
+                    <img src="facebook-icon.png" alt="Facebook">
+                </a>
+            </div>
+            <div class="social-link">
+                <a href="https://x.com/K1ngHandy" target="_blank">
+                    <img src="x-icon.png" alt="X.com">
+                </a>
+            </div>
+            <div class="social-link">
+                <a href="https://instagram.com/k1nghandy" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram">
+                </a>
+            </div>
+            <div class="social-link">
+                <a href="https://www.linkedin.com/in/k1nghandy" target="_blank">
+                    <img src="linkedin-icon.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </section>
+
     <script type="module">
         import { NavBar } from './NavBar.js';
         document.addEventListener('DOMContentLoaded', () => {
-            new NavBar('.menu-icon', 'nav-links');
+            new NavBar('.menu-icon', '.nav-links');
         });
     </script>
 </body>
