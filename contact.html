@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -15,10 +15,16 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-        
+        </ul>   
     </nav>
+    
     <h1>Contact</h1>
-    <script src="script.js"></script>
+    
+    <script type="module">
+        import { NavBar } from './NavBar.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            new NavBar('.menu-icon', 'nav-links');
+        });
+    </script>
 </body>
 </html>

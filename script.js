@@ -1,6 +1,6 @@
-toggleMenu = () => {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show-menu');
-}
+// toggleMenu = () => {
+//     const navLinks = document.querySelector('.nav-links');
+//     navLinks.classList.toggle('show-menu');
+// }
 
-console.log('Javascript');
+// console.log('Javascript');
