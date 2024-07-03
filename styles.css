@@ -4,11 +4,17 @@ body {
 }
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     padding: 10px 20px;
     background-color: #330033;
     color: white;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
 
 nav .logo img {
@@ -29,11 +35,6 @@ nav .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-}
-
-nav .nav-links li a {
-    color: white;
-    text-decoration: none;
 }
 
 nav .nav-links a {
