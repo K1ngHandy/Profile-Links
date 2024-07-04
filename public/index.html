@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .post {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/KingHandy.jpeg" alt="K1ngHandy AI Logo">
+            </a>
+        </div>
+        <div class="menu-icon">&#9776</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="home">
+        <h1>Home</h1>
+        <div id="posts-container"></div>
+    </section>
+
+    <script type="module" src="nav-bar.js"></script>
+    <script>
+        async function fetchRecentPosts() {
+            try {
+                const response = await fetch('/api/recent-posts');
+                const data = await response.json();
+
+                if (data.data && data.data.length > 0) {
+                    const postsContainer = document.getElementById('posts-container');
+                    data.data.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.className = 'post';
+                        postElement.innerHTML = `
+                            <a href="${post.permalink}" target="_blank">
+                                <img src="${post.media_url}" alt="${post.content}">
+                            </a>
+                            <p>${post.content}</p>
+                        `;
+                        postsContainer.appendChild(postElement);
+                    });
+                } else {
+                    document.getElementById('posts-container').innerText = 'No Posts Found.';
+                }
+            } catch (error) {
+                console.error('Error Fetching Recent Posts', error);
+                document.getElementById('posts-container').innerText = 'Failed to Fetch Posts.';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchRecentPosts);
+    </script>
+</body>
+</html>
