@@ -69,6 +69,17 @@ nav .nav-links a:hover {
     transition: transform 0.3s ease;
 }
 
+.post {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
