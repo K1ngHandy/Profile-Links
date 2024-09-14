@@ -3,19 +3,8 @@ export class NavBar {
         this.navContainer = document.querySelector(navSelector);
         this.setupNavBar();
         this.addEventListeners();
+        this.toggleMenu();
     }
-    // <nav class="nav-container">
-    //     <div class="logo">
-    //         <a href="index.html">
-    //             <img src="img/KingHandy.jpeg" alt="K1ngHandy AI Logo">
-    //         </a>
-    //     </div>
-    //     <div class="menu-icon">&#9776</div>
-    //     <ul class="nav-links">
-    //         <li><a href="index.html">Home</a></li>
-    //         <li><a href="contact.html">Contact</a></li>
-    //     </ul>
-    // </nav>
     
     setupNavBar() {
         let logo = document.createElement('div');
@@ -25,7 +14,7 @@ export class NavBar {
         attr.setAttribute('href', '/public/index.html');
 
         let linkImage = document.createElement('img');
-        linkImage.setAttribute('src', '/public/img/KingHandy.jpeg');
+        linkImage.setAttribute('src', '/public//assets/images/KingHandy.jpeg');
         linkImage.setAttribute('alt', 'K1ngHandy AI logo');
 
         attr.appendChild(linkImage);

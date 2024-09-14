@@ -46,12 +46,7 @@ nav .nav-links a:hover {
     color: rgb(15, 160, 150);
 }
 
-.home {
-    padding: 20px;
-    text-align: center;
-}
-
-.contact {
+main {
     padding: 20px;
     text-align: center;
 }
