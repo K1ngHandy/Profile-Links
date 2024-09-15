@@ -40,5 +40,5 @@ export class SocialLinks {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new SocialLinks('.contact');
+    new SocialLinks('.socials');
 });

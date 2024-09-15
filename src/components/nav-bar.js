@@ -24,8 +24,8 @@ export class NavBar {
         this.menuIcon.classList.add('menu-icon');
         this.menuIcon.innerHTML = '&#9776;';
 
-        this.navLinks = document.createElement('ul');
-        this.navLinks.classList.add('nav-links');
+        this.navList = document.createElement('ul');
+        this.navList.classList.add('nav-list');
 
         let listItem1 = document.createElement('li');
         let link1 = document.createElement('a');
@@ -39,21 +39,17 @@ export class NavBar {
         link2.innerText = "Contact";
         listItem2.append(link2);
 
-        this.navLinks.append(listItem1, listItem2);
+        this.navList.append(listItem1, listItem2);
         
-        this.navContainer.append(logo, this.menuIcon, this.navLinks);
+        this.navContainer.append(logo, this.menuIcon, this.navList);
     }
 
     addEventListeners() {
-        if (this.menuIcon) {
-            this.menuIcon.addEventListener('click', this.toggleMenu.bind(this));
-        }
+        this.menuIcon.addEventListener('click', this.toggleMenu().bind(this));
     }
 
     toggleMenu() {
-        if (this.navLinks) {
-            this.navLinks.classList.toggle('active');
-        }
+        this.navList.classList.toggle('active');
     }
 }
 

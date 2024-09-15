@@ -8,7 +8,7 @@ nav {
     align-items: center;
     padding: 10px 20px;
     background-color: #330033;
-    color: white;
+    color: #fff;
 }
 
 nav .logo {
@@ -26,23 +26,23 @@ nav .logo img:hover {
 }
 
 nav .menu-icon {
-    display: none;
+    display: none; /* hidden default */
     font-size: 2em;
     cursor: pointer;
 }
 
-nav .nav-links {
+nav .nav-list {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav .nav-links a {
-    color: white;
+nav .nav-list a {
+    color: #fff;
     text-decoration: none;
 }
 
-nav .nav-links a:hover {
+nav .nav-list a:hover {
     color: rgb(15, 160, 150);
 }
 
@@ -74,28 +74,95 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
 }
+
 .post img {
     max-width: 100%;
     height: auto;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
+@media (max-width: 1200px) {
+    nav .nav-list {
+        display: flex;
+    }
+}
+
+@media (max-width: 960px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav .nav-list {
         display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: flex;
+        color: inherit;
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .nav-list.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        display: none; /* hidden default */
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
 
-    .nav-links li {
-        margin: 1em 0;
+    .menu-icon {
+        display: flex;
+        padding: 12px;
+        cursor: pointer;
     }
 
-    .menu-icon {
-        display: block;
+    .nav-list.active {
+        display: flex;
     }
 }
 
-.show-menu {
-    display: flex;
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 12px;
+    }
+
+    nav .logo img {
+        height: 40px;
+    }
+
+    .menu-icon {
+        font-size: 1.5em;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #330033;
+        text-align: center;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list a {
+        padding: 9px 0;
+    }
 }
