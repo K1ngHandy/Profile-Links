@@ -3,7 +3,6 @@ export class NavBar {
         this.navContainer = document.querySelector(navSelector);
         this.setupNavBar();
         this.addEventListeners();
-        this.toggleMenu();
     }
     
     setupNavBar() {
@@ -45,7 +44,7 @@ export class NavBar {
     }
 
     addEventListeners() {
-        this.menuIcon.addEventListener('click', this.toggleMenu().bind(this));
+        this.menuIcon.addEventListener('click', () => this.toggleMenu());
     }
 
     toggleMenu() {

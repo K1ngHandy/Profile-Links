@@ -26,7 +26,7 @@ nav .logo img:hover {
 }
 
 nav .menu-icon {
-    display: none; /* hidden default */
+    display: none; /* hidden by default */
     font-size: 2em;
     cursor: pointer;
 }
@@ -38,6 +38,7 @@ nav .nav-list {
 }
 
 nav .nav-list a {
+    display: flex;
     color: #fff;
     text-decoration: none;
 }
@@ -88,17 +89,17 @@ main {
 
 @media (max-width: 960px) {
     nav {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
     }
 
     nav .nav-list {
         display: none;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
     }
 
-    .menu-icon {
+    nav .menu-icon {
         display: flex;
         color: inherit;
         padding: 12px;
