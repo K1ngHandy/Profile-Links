@@ -23,7 +23,7 @@ nav .logo img {
 }
 
 nav .logo img:hover {
-    animation: scaleTemporary 1s ease forwards;
+    animation: scaleTemporary 1s ease forwards; /* magnify on hover */
 }
 
 @keyframes scaleTemporary {
@@ -57,7 +57,8 @@ nav .nav-list a {
 }
 
 nav .nav-list a:hover {
-    color: rgb(15, 160, 150);
+    color: rgb(182, 225, 246);
+    animation: scaleTemporary 1s ease forwards; /* magnify on hover */
 }
 
 main {
@@ -79,7 +80,7 @@ main {
 }
 
 .social-link img:hover {
-    transform: scale(1.2);
+    animation: scaleTemporary 1s ease forwards; /* magnify on hover */
 }
 
 .post {
@@ -98,30 +99,42 @@ main {
     nav .nav-list {
         display: flex;
     }
+
+    nav .nav-list.active {
+        flex-direction: row;
+        margin-left: 24px;
+    }
+
+    nav .menu-icon:hover {
+        color: rgb(182, 225, 246);
+        animation: scaleTemporary 1s ease forwards;
+    }
 }
 
 @media (max-width: 960px) {
     nav {
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: flex-start;
     }
 
     nav .nav-list {
         display: none;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
     }
 
     nav .menu-icon {
         display: flex;
-        color: inherit;
         padding: 12px;
         cursor: pointer;
     }
 
     .nav-list.active {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        background-color: #330033;
+        width: 75%;
     }
 }
 
