@@ -18,11 +18,24 @@ nav .logo {
 }
 
 nav .logo img {
+    transition: transform 0.3 ease;
     height: 50px;
 }
 
 nav .logo img:hover {
-    transform: scale(1.2);
+    animation: scaleTemporary 1s ease forwards;
+}
+
+@keyframes scaleTemporary {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 nav .menu-icon {

@@ -21,7 +21,7 @@ export class SocialLinks {
 
             let anchor = document.createElement('a');
             anchor.href = href;
-            anchor.target = "_blank"; // open in new tab
+            // anchor.target = "_blank"; // open in new tab
 
             let img = document.createElement('img');
             img.src = src;
