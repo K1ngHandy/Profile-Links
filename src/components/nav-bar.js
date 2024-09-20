@@ -1,8 +1,10 @@
 export class NavBar {
     constructor(navSelector) {
         this.navContainer = document.querySelector(navSelector);
+        if (!this.navContainer) {
+            throw new Error(`Element with selector ${navSelector} not found.`);
+        }
         this.setupNavBar();
-        this.addEventListeners();
     }
     
     setupNavBar() {
@@ -13,7 +15,7 @@ export class NavBar {
         attr.setAttribute('href', '/public/index.html');
 
         let linkImage = document.createElement('img');
-        linkImage.setAttribute('src', '/public//assets/images/KingHandy.jpeg');
+        linkImage.setAttribute('src', '/public//assets/images/k1nghandy.jpeg');
         linkImage.setAttribute('alt', 'K1ngHandy AI logo');
 
         attr.appendChild(linkImage);
@@ -48,11 +50,10 @@ export class NavBar {
     }
 
     toggleMenu() {
-        this.navList.classList.toggle('active');
+        try {
+            this.navList.classList.toggle('active');
+        } catch (error) {
+            console.log('Error:', error);
+        }
     }
 }
-
-// Initialize NavBar when DOM content is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new NavBar('.nav-container');
-});

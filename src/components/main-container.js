@@ -1,16 +1,17 @@
-import { links } from "../data/links";
+import { links } from "../data/links.js";
+import { getThreads } from "../components/threads.js";
 
-export class SocialLinks {
-    constructor(socialSelector) {
-        this.contact = document.querySelector(socialSelector);
+export class MainContainer {
+    constructor(mainSelector) {
+        this.mainContainer = document.querySelector(mainSelector);
         this.setupLinks();
     }
 
     setupLinks() {
-        console.log('Links', links);
-        
-        let heading = document.createElement('h3');
-        heading.innerText = "Contact";
+        const hrTop = document.createElement('hr');
+        hrTop.classList.add('hr');
+        const hrLower = document.createElement('hr');
+        hrLower.classList.add('hr');
 
         let socialLinks = document.createElement('div');
         socialLinks.classList.add('social-links');
@@ -21,7 +22,6 @@ export class SocialLinks {
 
             let anchor = document.createElement('a');
             anchor.href = href;
-            // anchor.target = "_blank"; // open in new tab
 
             let img = document.createElement('img');
             img.src = src;
@@ -30,15 +30,11 @@ export class SocialLinks {
 
             anchor.appendChild(img);
 
-            socialLink.append(anchor);
+            socialLinks.append(anchor);
 
-            socialLinks.appendChild(socialLink);
+            socialLinks.appendChild(hrTop, socialLinks, hrLower);
         });
 
-        this.contact.append(heading, socialLinks);
+        this.mainContainer.append(socialLinks, getThreads());
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    new SocialLinks('.socials');
-});
