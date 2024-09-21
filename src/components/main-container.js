@@ -5,6 +5,7 @@ export class MainContainer {
     constructor(mainSelector) {
         this.mainContainer = document.querySelector(mainSelector);
         this.setupLinks();
+        this.getThreads();
     }
 
     setupLinks() {
@@ -17,9 +18,6 @@ export class MainContainer {
         socialLinks.classList.add('social-links');
 
         links.forEach(({ href, src, title }) => {
-            let socialLink = document.createElement('div');
-            socialLink.classList.add('social-link');
-
             let anchor = document.createElement('a');
             anchor.href = href;
 
@@ -29,12 +27,9 @@ export class MainContainer {
             img.alt = title;
 
             anchor.appendChild(img);
-
             socialLinks.append(anchor);
-
-            socialLinks.appendChild(hrTop, socialLinks, hrLower);
         });
 
-        this.mainContainer.append(socialLinks, getThreads());
+        this.mainContainer.append(hrTop, socialLinks, getThreads(), hrLower);
     }
 }
