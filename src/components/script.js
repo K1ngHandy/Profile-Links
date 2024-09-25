@@ -1,6 +1,6 @@
-import { NavBar } from "./nav-bar.js";
+import { NavBar } from "./nav.js";
 import { Footer } from "./footer.js";
-import { MainContainer } from "./main-container.js";
+import { MainContainer } from "./main.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     try {

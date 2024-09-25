@@ -5,6 +5,7 @@ export class NavBar {
             throw new Error(`Element with selector ${navSelector} not found.`);
         }
         this.setupNavBar();
+        this.addEventListeners();
     }
     
     setupNavBar() {

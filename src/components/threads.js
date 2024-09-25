@@ -1,6 +1,6 @@
 export const getThreads = async () => {
     const threadId = process.env.THREAD_ID;
-    console.log(threadId);
+    console.log('Thread ID:', threadId);
     const accessToken = process.env.ACCESS_TOKEN;
     const url = process.env.URL;
 

@@ -1,5 +1,5 @@
 import { links } from "../data/links.js";
-import { getThreads } from "../components/threads.js";
+import { getThreads } from "./threads.js";
 
 export class MainContainer {
     constructor(mainSelector) {
@@ -30,7 +30,6 @@ export class MainContainer {
             socialLinks.append(anchor);
         });
         
-
         this.mainContainer.append(hrTop, socialLinks, hrLower);
     }
 }
