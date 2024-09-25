@@ -1,5 +1,5 @@
 export class Footer {
-    constructor (footerSelector) {
+    constructor(footerSelector) {
         this.footerContainer = document.querySelector(footerSelector);
 
         if (this.footerContainer) {
@@ -14,10 +14,8 @@ export class Footer {
     }
 
     createFooter() {
-        console.log('Footer being created...');
-
         const url = "https://solo.to/k1nghandy";
         this.footerContainer.innerHTML = 
-            `<p>&copy; 2024 - <a href="${url}" target="_blank" rel="noopener noreferrer">K1ngHandy</a>; All rights reserved.</p>`;
+            `<p>&copy; 2024 - <a href=${url} target="_blank" rel="noopener noreferrer">K1ngHandy</a>; All rights reserved.</p>`;
     }
 }

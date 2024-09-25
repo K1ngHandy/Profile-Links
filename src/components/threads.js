@@ -1,7 +1,8 @@
 export const getThreads = async () => {
     const threadId = process.env.THREAD_ID;
+    console.log(threadId);
     const accessToken = process.env.ACCESS_TOKEN;
-    const url = `https://graph.facebook.com/v16.0/${threadId}/feed`;
+    const url = process.env.URL;
 
     try {
         const response = await axios.get(url,
@@ -13,6 +14,7 @@ export const getThreads = async () => {
                 limit: 5
             }
         });
+        console.log(response);
 
         const posts = response.data.data;
 

@@ -5,9 +5,9 @@ export class MainContainer {
     constructor(mainSelector) {
         this.mainContainer = document.querySelector(mainSelector);
         this.setupLinks();
-        this.getThreads();
     }
 
+    // getThreads;
     setupLinks() {
         const hrTop = document.createElement('hr');
         hrTop.classList.add('hr');
@@ -29,7 +29,8 @@ export class MainContainer {
             anchor.appendChild(img);
             socialLinks.append(anchor);
         });
+        
 
-        this.mainContainer.append(hrTop, socialLinks, getThreads(), hrLower);
+        this.mainContainer.append(hrTop, socialLinks, hrLower);
     }
 }
