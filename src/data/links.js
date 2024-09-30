@@ -1,6 +1,6 @@
 export const links = [
     {
-        href: "https://www.facebook.com/k1nghandy",
+        href: "https://facebook.com/k1nghandy",
         src: "/public/assets/images/facebook-icon.png",
         title: "Facebook"
     },
@@ -15,8 +15,13 @@ export const links = [
         title: "Instagram"
     },
     {
+        href: "https://bsky.app/profile/k1nghandy.bsky.social",
+        src: "/public/assets/images/bluesky.svg.png",
+        title: "Bluesky"
+    },
+    {
         href: "https://www.linkedin.com/in/k1nghandy",
         src: "/public/assets/images/linkedin-icon.png",
         title: "LinkedIn"
-    },
+    }
 ];
