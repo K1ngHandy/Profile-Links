@@ -1,16 +1,14 @@
 import { links } from "../data/links.js";
-import { getThreads } from "./threads.js";
 
-export class MainContainer {
+export class Main {
     constructor(mainSelector) {
-        this.mainContainer = document.querySelector(mainSelector);
+        this.main = document.querySelector(mainSelector);
         this.setupLinks();
     }
 
-    // getThreads;
     setupLinks() {
-        const hrTop = document.createElement('hr');
-        hrTop.classList.add('hr');
+        const hrUpper = document.createElement('hr');
+        hrUpper.classList.add('hr');
         const hrLower = document.createElement('hr');
         hrLower.classList.add('hr');
 
@@ -20,6 +18,7 @@ export class MainContainer {
         links.forEach(({ href, src, title }) => {
             let anchor = document.createElement('a');
             anchor.href = href;
+            anchor.setAttribute('target', '_blank');
 
             let img = document.createElement('img');
             img.src = src;
@@ -30,6 +29,6 @@ export class MainContainer {
             socialLinks.append(anchor);
         });
         
-        this.mainContainer.append(hrTop, socialLinks, hrLower);
+        this.main.append(hrUpper, socialLinks, hrLower);
     }
 }

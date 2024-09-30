@@ -1,14 +1,14 @@
-export class NavBar {
+export class Nav {
     constructor(navSelector) {
-        this.navContainer = document.querySelector(navSelector);
-        if (!this.navContainer) {
+        this.nav = document.querySelector(navSelector);
+        if (!this.nav) {
             throw new Error(`Element with selector ${navSelector} not found.`);
         }
-        this.setupNavBar();
+        this.createNav();
         this.addEventListeners();
     }
     
-    setupNavBar() {
+    createNav() {
         let logo = document.createElement('div');
         logo.classList.add('logo');
 
@@ -43,11 +43,20 @@ export class NavBar {
 
         this.navList.append(listItem1, listItem2);
         
-        this.navContainer.append(logo, this.menuIcon, this.navList);
+        this.nav.append(logo, this.menuIcon, this.navList);
     }
 
     addEventListeners() {
-        this.menuIcon.addEventListener('click', () => this.toggleMenu());
+        this.menuIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleMenu() 
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!this.menuIcon.contains(e.target) && !this.navList.contains(e.target)) {
+                this.removeActiveClass();
+            }
+        });
     }
 
     toggleMenu() {
@@ -56,5 +65,9 @@ export class NavBar {
         } catch (error) {
             console.log('Error:', error);
         }
+    }
+
+    removeActiveClass() {
+        this.navList.classList.remove('active');
     }
 }

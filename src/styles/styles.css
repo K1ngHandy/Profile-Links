@@ -7,7 +7,7 @@ nav {
     display: flex;
     justify-content: start;
     align-items: center;
-    /* padding: 10px 20px; */
+    padding: 10px 20px;
     background-color: #330033;
     color: #fff;
 }
@@ -65,7 +65,7 @@ nav .nav-list a:hover {
     margin: auto;
 }
 
-.hr {
+hr {
     color:#330033;
     height: 3px;
     background-color: #330033;
@@ -125,11 +125,6 @@ footer {
         display: flex;
     }
 
-    nav .nav-list.active {
-        flex-direction: row;
-        /* margin-left: 24px; */
-    }
-
     nav .menu-icon:hover {
         color: rgb(182, 225, 246);
         animation: scaleTemporary 1s ease forwards;
@@ -146,11 +141,12 @@ footer {
     nav .nav-list {
         display: none;
         padding: 0;
-        background-color: #330033;
+        background-color: #110011;
         width: 150px;
         position: absolute;
         left: 90px;
-        top: 50px;
+        top: 63px;
+        opacity: 87%;
     }
 
     nav .nav-list.active {

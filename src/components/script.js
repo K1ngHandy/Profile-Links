@@ -1,15 +1,15 @@
-import { NavBar } from "./nav.js";
+import { Nav } from "./nav.js";
 import { Footer } from "./footer.js";
-import { MainContainer } from "./main.js";
+import { Main } from "./main.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     try {
-        new NavBar('.nav-container');
+        new Nav('.nav-container');
     } catch (error) {
         console.error('Error initializing NavBar:', error);
     }
     try {
-        new MainContainer('.main-container');
+        new Main('.main-container');
     } catch (error) {
         console.error('Error initializing Main:', error);
     }
