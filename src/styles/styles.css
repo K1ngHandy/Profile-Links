@@ -39,7 +39,8 @@ nav .logo img:hover {
 }
 
 nav .menu-icon {
-    display: none; /* hidden by default */
+    visibility: hidden; /* hidden by default */
+    color: #fff;
     font-size: 2em;
     cursor: pointer;
 }
@@ -57,7 +58,7 @@ nav .nav-list a {
 
 nav .nav-list a:hover {
     color: rgb(182, 225, 246);
-    animation: scaleTemporary 1s ease forwards; /* magnify on hover */
+    animation: scaleTemporary 0.3s ease forwards; /* magnify on hover */
 }
 
 .main-container {
@@ -84,19 +85,7 @@ hr {
 }
 
 .social-links img:hover {
-    animation: scaleTemporary 1s ease forwards; /* magnify on hover */
-}
-
-.post {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.post img {
-    max-width: 100%;
-    height: auto;
+    animation: scaleTemporary 0.3s ease forwards; /* magnify on hover */
 }
 
 footer {
@@ -117,17 +106,25 @@ footer {
 }
 
 .footer-container a:hover {
-    animation: scaleTemporary 1s ease forwards;
+    animation: scaleTemporary 0.3s ease forwards;
 }
 
 @media (max-width: 1200px) {
     nav .nav-list {
-        display: flex;
+        visibility: hidden;
+    }
+
+    nav .nav-list.active {
+        visibility: visible;
+    }
+
+    nav .menu-icon {
+        visibility: visible;
     }
 
     nav .menu-icon:hover {
         color: rgb(182, 225, 246);
-        animation: scaleTemporary 1s ease forwards;
+        animation: scaleTemporary 0.3s ease forwards;
     }
 }
 
@@ -139,23 +136,11 @@ footer {
     }
 
     nav .nav-list {
-        display: none;
-        padding: 0;
-        background-color: #110011;
         width: 150px;
-        position: absolute;
-        left: 90px;
-        top: 63px;
-        opacity: 87%;
-    }
-
-    nav .nav-list.active {
-        display: flex;
     }
 
     nav .menu-icon {
         display: flex;
-        padding: 12px;
         cursor: pointer;
     }
 }
@@ -167,9 +152,14 @@ footer {
 
     nav .nav-list {
         display: none; /* hidden default */
+        background-color: #110011;
         position: absolute;
         flex-direction: column;
-        width: 75%;
+        gap: 0;
+        width: 30%;
+        left: 45px;
+        top: 63px;
+        opacity: 87%;
         text-align: center;
     }
 
@@ -177,14 +167,9 @@ footer {
         display: flex;
     }
 
-    nav .nav-list a {
-        padding: 9px 0;
-    }
-
-    .menu-icon {
-        display: flex;
-        padding: 12px;
-        cursor: pointer;
+    nav .nav-list li {
+        margin: auto;
+        padding: 20px;
     }
 }
 
@@ -200,16 +185,3 @@ footer {
     .menu-icon {
         font-size: 1.5em;
     }
-
-    nav .nav-list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: lightgrey;
-        text-align: center;
-    }
-
-    nav .nav-list.active {
-        display: flex;
-    }
-}
